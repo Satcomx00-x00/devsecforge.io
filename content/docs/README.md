@@ -3,6 +3,11 @@ title: Documentation Structure
 description: Guide to the documentation organization
 ---
 
+---
+title: Documentation Structure
+description: Guide to the documentation organization
+---
+
 # Documentation Structure
 
 This documentation is organized into clear, numbered sections for easy navigation:

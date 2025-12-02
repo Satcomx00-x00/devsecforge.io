@@ -1,0 +1,138 @@
+---
+title: SAST (Static Application Security Testing)
+description: Static code analysis for security vulnerabilities
+icon: Code
+---
+
+## What is SAST?
+
+Static Application Security Testing (SAST) analyzes source code, bytecode, or binaries for security vulnerabilities without executing the program.
+
+## Key Benefits
+
+- **Early Detection**: Find vulnerabilities during development
+- **Fast Feedback**: Immediate results in your IDE or CI/CD
+- **Code Coverage**: Analyze 100% of your codebase
+- **Compliance**: Meet security standards and regulations
+
+## Popular SAST Tools
+
+### Open Source
+
+```package-install
+semgrep
+```
+
+**Semgrep** - Fast, lightweight static analysis
+- Language support: 30+ languages
+- Custom rule creation
+- CI/CD integration
+
+```bash
+# Run Semgrep scan
+semgrep --config=auto .
+```
+
+### Commercial Tools
+
+| Tool | Languages | Best For |
+|------|-----------|----------|
+| Checkmarx | 25+ | Enterprise |
+| Veracode | 20+ | Compliance |
+| Snyk Code | 10+ | Developer-first |
+| SonarQube | 30+ | Code quality + security |
+
+## Integration Example (GitHub Actions)
+
+```yaml
+name: SAST Scan
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  sast:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Run Semgrep
+        uses: returntocorp/semgrep-action@v1
+        with:
+          config: >-
+            p/security-audit
+            p/secrets
+            p/owasp-top-ten
+          
+      - name: Upload SARIF results
+        uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with:
+          sarif_file: semgrep.sarif
+```
+
+## Best Practices
+
+### 1. Run Early and Often
+
+```bash
+# Pre-commit hook
+#!/bin/bash
+semgrep --config=auto --error --quiet .
+```
+
+### 2. Configure for Your Stack
+
+```yaml
+# .semgrep.yml
+rules:
+  - id: sql-injection
+    pattern: |
+      db.execute($QUERY)
+    message: Potential SQL injection
+    severity: ERROR
+    languages: [python]
+```
+
+### 3. Triage Effectively
+
+<Callout type="warn">
+Not all findings are equal. Prioritize based on:
+- **Severity**: Critical > High > Medium > Low
+- **Exploitability**: Easy to exploit vulnerabilities first
+- **Context**: Business impact and data sensitivity
+</Callout>
+
+## Common Vulnerabilities Detected
+
+- SQL Injection
+- Cross-Site Scripting (XSS)
+- Command Injection
+- Path Traversal
+- Hardcoded Secrets
+- Insecure Cryptography
+- Authentication Issues
+- Authorization Bypasses
+
+## SAST Limitations
+
+<Callout type="info">
+SAST cannot detect:
+- Runtime vulnerabilities
+- Configuration issues
+- Third-party service vulnerabilities
+- Business logic flaws
+
+Combine with DAST and other security testing methods.
+</Callout>
+
+## Next Steps
+
+<Cards>
+  <Card title="DAST" href="/docs/security/dast" />
+  <Card title="SCA" href="/docs/security/sca" />
+  <Card title="Secrets Management" href="/docs/security/secrets" />
+</Cards>

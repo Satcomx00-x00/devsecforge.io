@@ -3,9 +3,14 @@
   "pages": [
     "index",
     "---Getting Started---",
-    "test",
+    "01-getting-started",
     "---Security---",
-    "---Tools & Resources---",
-    "---API Reference---"
+    "02-security",
+    "---Development---",
+    "03-development",
+    "---Infrastructure---",
+    "04-infrastructure",
+    "---CI/CD---",
+    "05-cicd"
   ]
 }

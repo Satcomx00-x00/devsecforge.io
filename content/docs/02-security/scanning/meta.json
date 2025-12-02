@@ -1,0 +1,8 @@
+{
+  "title": "Security Scanning",
+  "pages": [
+    "sast",
+    "dast",
+    "sca"
+  ]
+}

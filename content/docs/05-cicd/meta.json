@@ -1,0 +1,11 @@
+{
+  "title": "CI/CD",
+  "pages": [
+    "---Pipeline Design---",
+    "pipelines",
+    "---Platforms---",
+    "platforms",
+    "---Deployment---",
+    "deployment"
+  ]
+}

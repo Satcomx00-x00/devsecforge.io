@@ -1,0 +1,12 @@
+{
+  "title": "Security",
+  "pages": [
+    "index",
+    "---Security Scanning---",
+    "scanning",
+    "---Secrets Management---",
+    "secrets-management",
+    "---Best Practices---",
+    "best-practices"
+  ]
+}

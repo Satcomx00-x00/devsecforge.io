@@ -50,174 +50,110 @@ export default function Layout({ children }: { children: ReactNode }) {
       {/* Right Sidebar with Custom Cards - Snapped to screen right */}
       <aside className="hidden xl:block fixed right-0 top-16 w-80 h-[calc(100vh-4rem)] overflow-y-auto border-l border-border/50 bg-gradient-to-b from-background/95 to-background/98 backdrop-blur-xl">
         <div className="p-6 space-y-6">
-            {/* Documentation Hub Card */}
-            <div className="group relative overflow-hidden rounded-2xl border border-border/50 bg-gradient-to-br from-card via-card to-card/50 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-500">
-              {/* Animated gradient background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-cyan-500/10 opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(120,119,198,0.1),rgba(255,255,255,0))]" />
-              
-              {/* Content */}
-              <div className="relative p-5 space-y-5">
-                {/* Header with floating icon */}
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-1">
-                      <h3 className="text-base font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                        Documentation Hub
-                      </h3>
-                      <div className="px-2 py-0.5 rounded-full bg-blue-500/10 border border-blue-500/20">
-                        <span className="text-[10px] font-semibold text-blue-400">LIVE</span>
-                      </div>
-                    </div>
-                    <p className="text-xs text-muted-foreground">Comprehensive learning resources</p>
+          {/* Documentation Hub Card */}
+            {/* Animated gradient background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-cyan-500/10 opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(120,119,198,0.1),rgba(255,255,255,0))]" />
+
+
+          {/* Security First Card with improved layout */}
+          <div className="group relative overflow-hidden rounded-2xl border border-green-500/30 bg-gradient-to-br from-card to-green-500/5 hover:shadow-xl hover:shadow-green-500/10 transition-all duration-500">
+            <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-emerald-500/5 opacity-50 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/10 rounded-full blur-3xl" />
+
+            <div className="relative p-5 space-y-4">
+              {/* Enhanced Header */}
+              <div className="flex items-center gap-3">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-green-500 rounded-xl blur-lg opacity-30" />
+                  <div className="relative p-2.5 rounded-xl bg-gradient-to-br from-green-500/20 to-emerald-500/20 border border-green-500/30">
+                    <Lock className="w-5 h-5 text-green-400" />
                   </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-base font-bold text-green-400 mb-0.5">Security First</h3>
+                  <p className="text-[10px] text-muted-foreground uppercase tracking-wide font-semibold">Enterprise Grade Protection</p>
+                </div>
+              </div>
+
+              {/* Description with better typography */}
+              <p className="text-xs text-muted-foreground leading-relaxed pl-1">
+                Built with zero-trust architecture and end-to-end encryption for maximum security in every layer.
+              </p>
+
+              {/* Features with improved layout */}
+              <div className="space-y-2.5 pl-1">
+                <div className="flex items-center gap-2.5 group/item">
+                  <div className="p-1 rounded-md bg-green-500/10 group-hover/item:bg-green-500/20 transition-colors">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-green-400" />
+                  </div>
+                  <span className="text-xs text-muted-foreground group-hover/item:text-foreground transition-colors">Zero-trust architecture</span>
+                </div>
+                <div className="flex items-center gap-2.5 group/item">
+                  <div className="p-1 rounded-md bg-green-500/10 group-hover/item:bg-green-500/20 transition-colors">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-green-400" />
+                  </div>
+                  <span className="text-xs text-muted-foreground group-hover/item:text-foreground transition-colors">End-to-end encryption</span>
+                </div>
+                <div className="flex items-center gap-2.5 group/item">
+                  <div className="p-1 rounded-md bg-green-500/10 group-hover/item:bg-green-500/20 transition-colors">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-green-400" />
+                  </div>
+                  <span className="text-xs text-muted-foreground group-hover/item:text-foreground transition-colors">SOC 2 Type II compliant</span>
+                </div>
+              </div>
+
+              {/* Enhanced CTA */}
+              <a
+                href="/docs/security"
+                className="group/link flex items-center justify-between p-3 rounded-xl border border-green-500/30 bg-green-500/5 hover:bg-green-500/10 hover:border-green-500/50 transition-all"
+              >
+                <span className="text-sm font-semibold text-green-400">Explore Security</span>
+                <ArrowRight className="w-4 h-4 text-green-400 group-hover/link:translate-x-1 transition-transform" />
+              </a>
+            </div>
+          </div>
+
+          {/* Status Card with modern design */}
+          <div className="relative overflow-hidden rounded-2xl border border-border/50 bg-gradient-to-br from-card to-card/50 p-5 space-y-4">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-green-500" />
+
+            <div className="flex items-center justify-between">
+
+            </div>
+
+            <div className="space-y-3">
+              <div className="group/status flex items-center justify-between p-2.5 rounded-lg hover:bg-accent/50 transition-colors">
+                <div className="flex items-center gap-2.5">
                   <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity" />
-                    <div className="relative bg-gradient-to-br from-blue-600 to-purple-600 p-2.5 rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
-                      <Shield className="w-5 h-5 text-white" />
-                    </div>
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                    <div className="absolute inset-0 w-2 h-2 bg-green-500 rounded-full animate-ping opacity-75" />
                   </div>
+                  <span className="text-xs font-medium text-foreground">API Services</span>
                 </div>
-
-                {/* Stats with better styling */}
-                <div className="grid grid-cols-3 gap-3">
-                  <div className="group/stat relative overflow-hidden rounded-xl bg-gradient-to-br from-yellow-500/10 to-orange-500/10 border border-yellow-500/20 p-3 hover:scale-105 transition-transform duration-300">
-                    <div className="flex flex-col items-center text-center space-y-1">
-                      <Star className="w-4 h-4 text-yellow-500 group-hover/stat:animate-pulse" />
-                      <div className="text-2xl font-black bg-gradient-to-br from-yellow-400 to-orange-400 bg-clip-text text-transparent">50+</div>
-                      <div className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wide">Guides</div>
-                    </div>
-                  </div>
-                  <div className="group/stat relative overflow-hidden rounded-xl bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-500/20 p-3 hover:scale-105 transition-transform duration-300">
-                    <div className="flex flex-col items-center text-center space-y-1">
-                      <Code2 className="w-4 h-4 text-blue-500 group-hover/stat:animate-pulse" />
-                      <div className="text-2xl font-black bg-gradient-to-br from-blue-400 to-cyan-400 bg-clip-text text-transparent">25+</div>
-                      <div className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wide">APIs</div>
-                    </div>
-                  </div>
-                  <div className="group/stat relative overflow-hidden rounded-xl bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20 p-3 hover:scale-105 transition-transform duration-300">
-                    <div className="flex flex-col items-center text-center space-y-1">
-                      <Trophy className="w-4 h-4 text-purple-500 group-hover/stat:animate-pulse" />
-                      <div className="text-2xl font-black bg-gradient-to-br from-purple-400 to-pink-400 bg-clip-text text-transparent">15+</div>
-                      <div className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wide">Tools</div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* CTA Button with better design */}
-                <a
-                  href="/docs"
-                  className="relative group/btn flex items-center justify-center gap-2 p-3.5 rounded-xl bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 hover:border-blue-500/50 hover:from-blue-500/30 hover:to-purple-500/30 transition-all duration-300 overflow-hidden"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-purple-500/20 to-blue-500/0 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-1000" />
-                  <Sparkles className="w-4 h-4 text-blue-400 relative z-10" />
-                  <span className="text-sm font-semibold text-blue-400 relative z-10">Get Started Now</span>
-                  <ArrowRight className="w-4 h-4 text-blue-400 group-hover/btn:translate-x-1 transition-transform relative z-10" />
-                </a>
+                <span className="text-xs font-semibold text-green-400">99.9%</span>
               </div>
-            </div>
 
-            {/* Security First Card with improved layout */}
-            <div className="group relative overflow-hidden rounded-2xl border border-green-500/30 bg-gradient-to-br from-card to-green-500/5 hover:shadow-xl hover:shadow-green-500/10 transition-all duration-500">
-              <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-emerald-500/5 opacity-50 group-hover:opacity-100 transition-opacity" />
-              <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/10 rounded-full blur-3xl" />
-              
-              <div className="relative p-5 space-y-4">
-                {/* Enhanced Header */}
-                <div className="flex items-center gap-3">
+              <div className="group/status flex items-center justify-between p-2.5 rounded-lg hover:bg-accent/50 transition-colors">
+                <div className="flex items-center gap-2.5">
                   <div className="relative">
-                    <div className="absolute inset-0 bg-green-500 rounded-xl blur-lg opacity-30" />
-                    <div className="relative p-2.5 rounded-xl bg-gradient-to-br from-green-500/20 to-emerald-500/20 border border-green-500/30">
-                      <Lock className="w-5 h-5 text-green-400" />
-                    </div>
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                    <div className="absolute inset-0 w-2 h-2 bg-green-500 rounded-full animate-ping opacity-75" />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-base font-bold text-green-400 mb-0.5">Security First</h3>
-                    <p className="text-[10px] text-muted-foreground uppercase tracking-wide font-semibold">Enterprise Grade Protection</p>
-                  </div>
+                  <span className="text-xs font-medium text-foreground">Documentation</span>
                 </div>
-
-                {/* Description with better typography */}
-                <p className="text-xs text-muted-foreground leading-relaxed pl-1">
-                  Built with zero-trust architecture and end-to-end encryption for maximum security in every layer.
-                </p>
-
-                {/* Features with improved layout */}
-                <div className="space-y-2.5 pl-1">
-                  <div className="flex items-center gap-2.5 group/item">
-                    <div className="p-1 rounded-md bg-green-500/10 group-hover/item:bg-green-500/20 transition-colors">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-green-400" />
-                    </div>
-                    <span className="text-xs text-muted-foreground group-hover/item:text-foreground transition-colors">Zero-trust architecture</span>
-                  </div>
-                  <div className="flex items-center gap-2.5 group/item">
-                    <div className="p-1 rounded-md bg-green-500/10 group-hover/item:bg-green-500/20 transition-colors">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-green-400" />
-                    </div>
-                    <span className="text-xs text-muted-foreground group-hover/item:text-foreground transition-colors">End-to-end encryption</span>
-                  </div>
-                  <div className="flex items-center gap-2.5 group/item">
-                    <div className="p-1 rounded-md bg-green-500/10 group-hover/item:bg-green-500/20 transition-colors">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-green-400" />
-                    </div>
-                    <span className="text-xs text-muted-foreground group-hover/item:text-foreground transition-colors">SOC 2 Type II compliant</span>
-                  </div>
-                </div>
-
-                {/* Enhanced CTA */}
-                <a
-                  href="/docs/security"
-                  className="group/link flex items-center justify-between p-3 rounded-xl border border-green-500/30 bg-green-500/5 hover:bg-green-500/10 hover:border-green-500/50 transition-all"
-                >
-                  <span className="text-sm font-semibold text-green-400">Explore Security</span>
-                  <ArrowRight className="w-4 h-4 text-green-400 group-hover/link:translate-x-1 transition-transform" />
-                </a>
-              </div>
-            </div>
-
-            {/* Status Card with modern design */}
-            <div className="relative overflow-hidden rounded-2xl border border-border/50 bg-gradient-to-br from-card to-card/50 p-5 space-y-4">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-green-500" />
-              
-              <div className="flex items-center justify-between">
-                <h4 className="text-xs font-bold text-foreground uppercase tracking-wider">System Status</h4>
-                <div className="px-2 py-1 rounded-full bg-green-500/10 border border-green-500/30">
-                  <span className="text-[10px] font-bold text-green-400">ALL SYSTEMS GO</span>
-                </div>
+                <span className="text-xs font-semibold text-green-400">100%</span>
               </div>
 
-              <div className="space-y-3">
-                <div className="group/status flex items-center justify-between p-2.5 rounded-lg hover:bg-accent/50 transition-colors">
-                  <div className="flex items-center gap-2.5">
-                    <div className="relative">
-                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                      <div className="absolute inset-0 w-2 h-2 bg-green-500 rounded-full animate-ping opacity-75" />
-                    </div>
-                    <span className="text-xs font-medium text-foreground">API Services</span>
-                  </div>
-                  <span className="text-xs font-semibold text-green-400">99.9%</span>
-                </div>
-                
-                <div className="group/status flex items-center justify-between p-2.5 rounded-lg hover:bg-accent/50 transition-colors">
-                  <div className="flex items-center gap-2.5">
-                    <div className="relative">
-                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                      <div className="absolute inset-0 w-2 h-2 bg-green-500 rounded-full animate-ping opacity-75" />
-                    </div>
-                    <span className="text-xs font-medium text-foreground">Documentation</span>
-                  </div>
-                  <span className="text-xs font-semibold text-green-400">100%</span>
-                </div>
-
-                <div className="pt-3 mt-3 border-t border-border/50 flex items-center justify-between">
-                  <span className="text-xs text-muted-foreground font-medium">Current Version</span>
-                  <div className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
-                    <span className="text-xs font-mono font-bold text-foreground">v1.0.0</span>
-                  </div>
+              <div className="pt-3 mt-3 border-t border-border/50 flex items-center justify-between">
+                <span className="text-xs text-muted-foreground font-medium">Current Version</span>
+                <div className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
+                  <span className="text-xs font-mono font-bold text-foreground">v1.0.0</span>
                 </div>
               </div>
             </div>
+          </div>
         </div>
       </aside>
     </DocsLayout>

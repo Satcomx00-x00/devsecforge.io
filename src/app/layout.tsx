@@ -1,16 +1,30 @@
 import { RootProvider } from 'fumadocs-ui/provider/next';
 import './global.css';
 import { Inter } from 'next/font/google';
+import type { Metadata } from 'next';
 
 const inter = Inter({
   subsets: ['latin'],
 });
 
+export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NODE_ENV === 'development'
+      ? 'http://localhost:3000'
+      : 'https://devsecforge.io'
+  ),
+  title: {
+    default: 'DevSecForge.io - Secure Software Development',
+    template: '%s | DevSecForge.io',
+  },
+  description: 'Forge secure software with confidence. Integrate security seamlessly into your development pipeline.',
+};
+
 export default function Layout({ children }: LayoutProps<'/'>) {
   return (
-    <html lang="en" className={inter.className} suppressHydrationWarning>
+    <html lang="en" className={`${inter.className} dark`} suppressHydrationWarning>
       <body className="flex flex-col min-h-screen">
-        <RootProvider>{children}</RootProvider>
+        <RootProvider theme={{ enabled: false }}>{children}</RootProvider>
       </body>
     </html>
   );
